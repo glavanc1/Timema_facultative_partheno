@@ -8,7 +8,7 @@ genome=$2 ## the path and name of the reference genome
 THREADS=$3 ## the number of threads requested per job
 
 ## Usage example:
-## bash bwa_mem_SLURM_script_maker.sh $(pwd)/clean/ $(pwd)/genome/1_Tps_b3v09_1.fasta 4
+## bash bwa_mem_SLURM_script_maker.sh $(pwd)/clean/ $(pwd)/genome/1_Tdi_b3v08.fasta 1
 
 cd $dir/..
 
@@ -27,7 +27,7 @@ do
         echo "#SBATCH --mem=8G" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
         echo "#SBATCH --output=%x_%j.out" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
         echo "#SBATCH --error=%x_%j.err" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
-        echo "#SBATCH --time=6:00:00" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
+        echo "#SBATCH --time=1:00:00" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
         echo "#SBATCH --mail-type=NONE" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
         echo "#SBATCH --nodes=1" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
         echo "#SBATCH --ntasks=1" >> ./bwa_mem_SLURM_scripts/${j}_bwa_mem_slurm.sh
