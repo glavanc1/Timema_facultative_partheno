@@ -12,7 +12,7 @@ The reference genome used in this study is available under BioSample SAMEA538477
 We used the `mem` algorithm of `bwa` version 0.7.17 and converted to bam format using `samtools` version 1.4. The script `bwa_mem_SLURM_script_maker.sh` was used to produce one SLURM script for each individual.
 
 ## SNP calling
-We called SNPs using `stacks` v2.3e and the popmap.txt provided on this repository. We ran gstacks and populations using the following commands:
+We called SNPs using `stacks` v2.3e and the popmap.txt provided on this repository. We ran `gstacks` and `populations` using the following commands:
 
 `gstacks -t 16 --phasing-dont-prune-hets --ignore-pe-reads -M /work/FAC/FBM/DEE/tschwand/default/glavanc1/stacks/popmap.txt -I /work/FAC/FBM/DEE/tschwand/default/glavanc1/mapped -O /work/FAC/FBM/DEE/tschwand/default/glavanc1/stacks`
 
