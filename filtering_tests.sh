@@ -24,8 +24,8 @@ done
 done
 
 grep 'minDP' vcftools_all.out | cut -f 2 | cut -f 2 -d ' ' > DP
-grep 'max-missing' test_filtering.out | cut -f 2 | cut -f 2 -d ' ' > miss
-grep 'out of a possible' test_filtering.out | cut -f 4 -d ' ' > kept
+grep 'max-missing' vcftools_all.out | cut -f 2 | cut -f 2 -d ' ' > miss
+grep 'out of a possible' vcftools_all.out | cut -f 4 -d ' ' > kept
 
 paste DP miss kept > summary_filtering.txt
 
