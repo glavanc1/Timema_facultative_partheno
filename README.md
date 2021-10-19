@@ -8,8 +8,7 @@ The SRA accession numbers for the demultiplexed reads used in this study are ava
 They were demultiplexed using the `process_radtags` command of [stacks](https://catchenlab.life.illinois.edu/stacks/) v2.3e with the `-c -q -r -t 92 --filter_illumina`. options.
 
 ## Mapping to the reference genome of *Timema douglasi*.
-The reference genome used in this study is available under BioSample SAMEA5384775. The
-We used the `mem` algorithm of `bwa` version 0.7.17 and converted to bam format using `samtools` version 1.4. The script `bwa_mem_SLURM_script_maker.sh` was used to produce one SLURM script for each individual.
+The reference genome used in this study is available under BioSample SAMEA5384775. We used the `mem` algorithm of `bwa` version 0.7.17 and converted to bam format using `samtools` version 1.4. The script `bwa_mem_SLURM_script_maker.sh` was used to produce one SLURM script for each individual.
 
 ## SNP calling
 We called SNPs using `stacks` v2.3e and the popmap.txt provided on this repository. We ran `gstacks` and `populations` using the following commands:
