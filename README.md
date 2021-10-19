@@ -34,4 +34,4 @@ and the subset dataset consisting only of adults with the keep_adults.txt file a
 We ran `fastSTRUCTURE` version 1.0 using the script `runfaststructure.sh`.
 
 ## Further analyses
-All subsequent analyses were run in `R`.
+All subsequent analyses were run and plots were produced in `R` version 4.0.3 using the script `Analyses.R`.
