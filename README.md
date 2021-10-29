@@ -4,7 +4,7 @@ This is the repository for the scripts used in this study:
 >Larose* C., Lavanchy* G., Freitas S., Parker D.J., Schwander T. TITLE. BioRxiv. DOI
 
 ## Demultiplexed read acquisition
-The SRA accession numbers for the demultiplexed reads used in this study are available in Table S1 in the supplementary materials of the article.
+The SRA accession numbers for the demultiplexed reads used in this study will be available in Table S1 in the supplementary materials of the article.
 They were demultiplexed using the `process_radtags` command of [stacks](https://catchenlab.life.illinois.edu/stacks/) v2.3e with the `-c -q -r -t 92 --filter_illumina`. options.
 
 ## Mapping to the reference genome of *Timema douglasi*.
@@ -33,4 +33,4 @@ and the subset dataset consisting only of adults with the keep_adults.txt file a
 We ran `fastSTRUCTURE` version 1.0 using the script `runfaststructure.sh`.
 
 ## Further analyses
-All subsequent analyses were run and plots were produced in `R` version 4.0.3 using the script `Analyses.R`.
+All subsequent analyses were run and plots were produced in `R` version 4.0.3 using the script `Analyses.R`. Plots were edited in Illustrator to improve display.
