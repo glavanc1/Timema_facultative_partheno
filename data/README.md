@@ -1,5 +1,7 @@
-# Timema_facultative_partheno | accessory_scripts
+# Timema_facultative_partheno | data
 
-* **Timema_cov_tidier.py**  | join coverage estimates together for each sample - see *ID_Tdi_X.sh*
-* **genomeCoverageBed_tidier.py** | Tidy output of genomeCoverageBed per scaffolds - see *ID_Tdi_X.sh*
-* **sex_chr_cov_class.py** | plot genome coverage - see *ID_Tdi_X.sh*
+* **AllIllumina-PEadapters.fa** | Illumina adapter sequence
+* **coverage/Tdi_pairedcov_minlen=1000_contig_cov.txt | Sample coverage for each contig
+* **coverage/Tdi_v8_MFcov_filt_1000_pairedcov_.csv | Male to Female coverage for each contig
+* **coverage/sex_chr_peaks_1000_pairedcov_.csv | Sex chromosome peak value
+* **coverage/Tdi_1000_peakadj_2_chr_class.csv | Contigs classed as X or Autosomes based on coverage
