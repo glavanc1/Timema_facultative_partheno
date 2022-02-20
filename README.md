@@ -32,5 +32,10 @@ and the subset dataset consisting only of adults with the keep_adults.txt file a
 ## Population structure
 We ran `fastSTRUCTURE` version 1.0 using the script `runfaststructure.sh`.
 
+## Identifying the X chromosome of *Timema douglasi*.
+
+* **ID_Tdi_X.sh** | Script to map male (BioProject: PRJNA808673) and female (BioProject: PRJNA670663) whole-genome reads to reference genome.  
+* **Tim_cov_analysis.R** | Coverage analyses to ID the X.
+
 ## Further analyses
 All subsequent analyses were run and plots were produced in `R` version 4.0.3 using the script `Analyses.R`. Plots were edited in Illustrator to improve display.
