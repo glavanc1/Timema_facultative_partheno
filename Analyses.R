@@ -7,6 +7,7 @@ library(vcfR)
 library(adegenet)
 library(car)
 library(multcomp)
+library(phytools)
 
 
 ########################
@@ -98,6 +99,16 @@ row.names(MO6) <- adults
 # Loading the sex ratio results
 sexratio <- read.table("sex_ratios.txt", h=T)
 
+# Loading the metadata for the reference T. douglasi and T. poppensis individuals
+treemeta <- read.table("metadata_additional_Tps_Tdi_refs.txt", h=T)
+
+# Loading the nuclear tree (Figure 1E)
+tree_nucl <- read.tree("../phylo_mine/subset_mt_DP8_mac3_miss80.recode.min4.phy.treefile.newick")
+
+# Loading the mitochdonrial tree (Figure 1F) and removing the outgroup
+tree_mt <- read.tree("../mtDNA_phylo/all_consensus_withoutgroup_aligned.nexus")
+tree_mt2 <- drop.tip(tree_mt, tip = "Timema_cristinae", trim.internal = T)
+
 #############################
 ### Population sex ratios ###
 #############################
@@ -143,7 +154,7 @@ abline(lm_het, lty=2)
 abline(h=lm_het$coefficients[1], lty=3)
 
 # Defining the corrected value of heterozygosity as 
-#the observed value minus the difference between 
+# the observed value minus the difference between 
 # the predicted value and the intercept.
 meta$het.corrected <- meta$het - predict.lm(object = lm_het, newdata = meta) + lm_het$coefficients[1]
 
@@ -204,11 +215,65 @@ meta$colK3[match(row.names(MO3)[which(MO3$V2 > 0.8)], meta$ID)] <- "#841433"
 meta$lineage[match(row.names(MO3)[which(MO3$V2 > 0.8)], meta$ID)] <- "red"
 meta$lineage <- as.factor(meta$lineage)
 
+#################
+### Phylogeny ###
+#################
+cophylo <- cophylo(tree_nucl, tree_mt2)
+cophylo$trees[[1]]$col <- meta$colK3[match(cophylo$trees[[1]]$tip.label, meta$ID)]
+cophylo$trees[[1]]$col[which(cophylo$trees[[1]]$tip.label %in% treemeta$ID[which(treemeta$sp == "poppensis")])] <- "#00A79D"
+cophylo$trees[[1]]$col[which(cophylo$trees[[1]]$tip.label %in% treemeta$ID[which(treemeta$sp == "douglasi")])] <- "#662D91"
+cophylo$trees[[2]]$col <- meta$colK3[match(cophylo$trees[[2]]$tip.label, meta$ID)]
+cophylo$trees[[2]]$col[which(cophylo$trees[[2]]$tip.label %in% treemeta$ID[which(treemeta$sp == "poppensis")])] <- "#00A79D"
+cophylo$trees[[2]]$col[which(cophylo$trees[[2]]$tip.label %in% treemeta$ID[which(treemeta$sp == "douglasi")])] <- "#662D91"
 
+plot(cophylo, fsize=0.45, scale.bar=c(0.1, 0.05))
+tiplabels.cophylo(pch=19, col=cophylo$trees[[1]]$col, which="left")
+tiplabels.cophylo(pch=19, col=cophylo$trees[[2]]$col, which="right")
 
 #########################
 ### Reproductive mode ###
 #########################
+
+### Reproductive mode differences between the lineages
+
+meta$hatch_ratio_unf <- meta$N_hatching_unf  / meta$N_unfertilized_eggs
+meta$hatch_ratio_unf[which(is.nan(meta$hatch_ratio_unf))] <- NA
+meta$hatch_ratio_after <- meta$N_hatching_aftermating / meta$N_eggs_aftermating
+meta$total_eggs <- meta$N_unfertilized_eggs + meta$N_eggs_aftermating
+
+# Removing 3 females for which no offspring could be obtained
+moms <- meta$ID[which(meta$type=="F")]
+moms <- moms[-which(moms %in% c("17-2161", "17-2204", "17-2009"))]
+
+### Figure 2
+meta$order <- NA
+meta$order[which(meta$subpop == "MANCH_1")] <- 1
+meta$order[which(meta$subpop == "MANCH_2")] <- 2
+meta$order[which(meta$subpop == "MANCH_3")] <- 3
+meta$order[which(meta$subpop == "MANCH_4")] <- 4
+meta$order[which(meta$subpop == "MANCH_5")] <- 5
+meta$order[which(meta$subpop == "MANCH_6")] <- 6
+meta$order[which(meta$subpop == "MANCH_7")] <- 7
+meta$order[which(meta$subpop == "MANCH_8")] <- 8
+meta$order[which(meta$subpop == "MANCH_9")] <- 9
+meta$order[which(meta$subpop == "MANCH_10")] <- 10
+meta$order[which(meta$subpop == "MANCH_11")] <- 11
+meta$order[which(meta$subpop == "MANCH_12")] <- 12
+meta$order[which(meta$subpop == "ORR_1")] <- 13
+meta$order[which(meta$subpop == "ORR_2")] <- 14
+meta$order[which(meta$subpop == "ORR_3")] <- 15
+meta$order[which(meta$subpop == "ORR_4")] <- 16
+meta$order[which(meta$subpop == "ORR_7")] <- 17
+meta$order[which(meta$subpop == "ORR_8")] <- 18
+meta$order[which(meta$subpop == "ORR_10")] <- 19
+meta$order[which(meta$subpop == "ORR_11")] <- 20
+meta$order[which(meta$subpop == "ORR_17")] <- 21
+ordered_pops <- c("MANCH_1", "MANCH_2", "MANCH_3", "MANCH_4", "MANCH_5", "MANCH_6", "MANCH_7", "MANCH_8", "MANCH_9", "MANCH_10", "MANCH_11", "MANCH_12", "ORR_1", "ORR_2", "ORR_3", "ORR_4", "ORR_7", "ORR_8", "ORR_10", "ORR_11")
+
+boxplot(meta$hatch_ratio_unf ~ meta$order, col=NA, las=2, outline=F, xlab="Population", ylab="Proportion of unfertilized eggs hatching", names=ordered_pops, ylim=c(0,1))
+points(meta$hatch_ratio_unf ~ jitter(eggs$order), col=eggs$col, pch=19, cex=sqrt(log(eggs$N_unf2/3)))
+legend("topleft", legend=c("5", "15", "60"), pch=19, cex=sqrt(log(c(5,15,60)/3)), bty="n")
+
 
 ### Figure 3
 
@@ -218,7 +283,7 @@ order <- c(meta$ID[which(meta$type=="F" & meta$colK3== "#98D9EB")][order(meta$he
 order <- order[-which(order %in% c("17-2161", "17-1913", "17-1937", "17-1800", "17-2204", "17-1796", "17-1770", "17-2009", "17-1797"))] 
 
 par(mfrow=c(1,1), mai=c(0.8,0.8, 0.1, 0.1))
-plot(meta$het.corrected[match(order, meta$ID)], pch=15, col=meta$colK3[match(order, meta$ID)], xaxt="n", xlab="", ylab="Relative_heterozygosity", las=1, ylim=c(0, max(meta$het[which(meta$ID %in% order)])))
+plot(meta$het.corrected[match(order, meta$ID)], pch=19, cex=1.25, col=meta$colK3[match(order, meta$ID)], xaxt="n", xlab="", ylab="Relative_heterozygosity", las=1, ylim=c(0, max(meta$het[which(meta$ID %in% order)])))
 axis(side=1, at=1:27, labels = order, las=2, cex.axis=0.8)
 points(meta$het.corrected[which(meta$type=="U")] ~ jitter(match(meta$family[which(meta$type=="U")], order)), pch=4, cex=0.75)
 
@@ -253,18 +318,6 @@ meta$produced_by <- NA
 meta$produced_by[which(meta$prop_mismatches_with_mom > 0.1 & meta$het > 0.08)] <- "sex"
 meta$produced_by[which(meta$prop_mismatches_with_mom < 0.1 & meta$het < 0.08)] <- "asex"
 
-
-
-### Reproductive mode differences between the lineages
-
-meta$hatch_ratio_unf <- meta$N_hatching_unf  / meta$N_unfertilized_eggs
-meta$hatch_ratio_unf[which(is.nan(meta$hatch_ratio_unf))] <- NA
-meta$hatch_ratio_after <- meta$N_hatching_aftermating / meta$N_eggs_aftermating
-meta$total_eggs <- meta$N_unfertilized_eggs + meta$N_eggs_aftermating
-
-# Removing 3 females for which no offspring could be obtained
-moms <- meta$ID[which(meta$type=="F")]
-moms <- moms[-which(moms %in% c("17-2161", "17-2204", "17-2009"))]
 
 # Computing the proportion of babies from eggs laid after mating that were produced via sex (i.e. fertilized).
 meta$prop_after_fert <- NA
@@ -314,7 +367,7 @@ plot(glm3)
 summary(glht(glm3, mcp("as.factor(meta$lineage)"="Tukey")))
 (predicted.glm3 <- predict.glm(glm3, se.fit = T, type="response"))
 
-### Figure 2
+### Figure 5
 # to order individuals by lineage
 meta$lineageN <- NA
 meta$lineageN[which(meta$lineage=="red")] <- 1
@@ -350,45 +403,42 @@ segments(x0=3, x1=3, y0=0.1034483 - 0.06813701, y1=0.1034483 + 0.06813701, lwd=2
 ### Leftover heterozygosity in asexually-produced offspring ###
 ###############################################################
 
-### Figure S5
+meta$het_X <- apply(gt_X, 2, prop.het)
 male_X_het <- apply(gt_X[,which(dimnames(gt)[[2]] %in% meta$ID[which(meta$type=="M")])], 2, prop.het)
 unf_X_het <- apply(gt_X[,which(dimnames(gt)[[2]] %in% meta$ID[which(meta$produced_by=="asex")])], 2, prop.het)
 unf_het <- apply(gt[,which(dimnames(gt)[[2]] %in% meta$ID[which(meta$produced_by=="asex")])], 2, prop.het)
 
+### using the same correction as in the main text
+lm_het_male_X <- with(meta[which(meta$type=="M"),], lm_het_male_X <- lm(het_X~percent_missing))
+meta$het_male_X.corrected <- NA
+meta$het_male_X.corrected[which(meta$type=="M")] <- male_X_het - predict.lm(object = lm_het_male_X, newdata = meta[which(meta$type=="M"),]) + lm_het_male_X$coefficients[1]
+
+lm_het_unf_X <- with(meta[which(meta$produced_by=="asex"),], lm_het_unf_X <- lm(het_X~percent_missing))
+meta$het_unf_X.corrected <- NA
+meta$het_unf_X.corrected[which(meta$produced_by=="asex")] <- unf_X_het - predict.lm(object = lm_het_unf_X, newdata = meta[which(meta$produced_by=="asex"),]) + lm_het_unf_X$coefficients[1]
+
+### Figure S4A
+boxplot(meta$het_male_X.corrected, meta$het_unf_X.corrected, meta$het.corrected[which(meta$produced_by=="asex")], names = c("Male X", "X of asex babies", "asex babies genomewide"), las=1, ylab="Relative heterozygosity", col=NULL, outline = F, ylim=c(0, max(meta$het_male_X.corrected, na.rm = T)))
+points(meta$het_male_X.corrected ~ jitter(rep(1, dim(gt)[2]), factor = 12), pch=19)
+points(meta$het_unf_X.corrected ~ jitter(rep(2, dim(gt)[2]), factor = 8), pch=19)
+points(meta$het.corrected[which(meta$produced_by=="asex")] ~ jitter(rep(3, sum(meta$produced_by=="asex", na.rm = T)), factor = 5), pch=19)
+
+t.test(meta$het_unf_X.corrected, meta$het_male_X.corrected)
+
+### Depth comparison at homo- vs heterozygous loci
+
+avg_rel_dp_het_male_X <- apply(rel_dp_X[which(X_het_prop_in_males == 1), which(dimnames(gt)[[2]] %in% meta$ID[which(meta$type=="M")])], 2, mean, na.rm=T)
+avg_rel_dp_homo_male_X <- apply(rel_dp_X[which(X_het_prop_in_males == 0), which(dimnames(gt)[[2]] %in% meta$ID[which(meta$type=="M")])], 2, mean, na.rm=T)
+
+### Figure S4B
 par(mfrow=c(1,1))
-boxplot(male_X_het, unf_X_het, unf_het, names = c("Male X", "X of asex babies", "asex babies genomewide"), las=1, ylab="Relative heterozygosity")
+boxplot(avg_rel_dp_homo_male_X, avg_rel_dp_het_male_X, names=c("Homozygous", "Heterozygous"), las=1, ylab="Average standardized depth", col=NULL, outline=F, ylim=c(0,max(avg_rel_dp_het_male_X)))
+x1 <- jitter(rep(1, length(avg_rel_dp_het_male_X)), 10)
+x2 <- x1 + 1
+points(avg_rel_dp_homo_male_X ~ x1, pch=19)
+points(avg_rel_dp_het_male_X ~ x2, pch=19)
+segments(x1, avg_rel_dp_homo_male_X, x2, avg_rel_dp_het_male_X)
 
+t.test(avg_rel_dp_homo_male_X, avg_rel_dp_het_male_X, paired = T)
 
-### Figure S6A
-X_het_prop_in_asex <- apply(gt_X[,which(dimnames(gt)[[2]] %in% meta$ID[which(meta$produced_by=="asex")])], 1, prop.het)
-hist(X_het_prop_in_asex, breaks=100, las=1, main="", xlab="Proportion of asexually-produced hatchlings \n heterozygous per locus")
-
-### Figure S6B
-X_het_prop_in_males <- apply(gt_X[,which(dimnames(gt)[[2]] %in% meta$ID[which(meta$type=="M")])], 1, prop.het)
-hist(X_het_prop_in_males, breaks=100, las=1, main="", xlab="Proportion of males \n heterozygous per locus")
-
-#### Figure S6C
-plot(X_het_prop_in_asex ~ X_het_prop_in_males, pch=19, las=1, col=rgb(0,0,0,0.1))
-
-
-### Figure S7
-# Computing the average depth at loci with a heterozygous call on the X chromosome of males
-locus_avg_rel_dp_het_male_X <- apply(rel_dp_X[which(X_het_prop_in_males == 1), which(dimnames(gt)[[2]] %in% meta$ID[which(meta$type=="M")])], 1, mean, na.rm=T)
-# Computing the average depth at loci with a homozygous call on the X chromosome of males
-locus_avg_rel_dp_homo_male_X <- apply(rel_dp_X[which(X_het_prop_in_males == 0), which(dimnames(gt)[[2]] %in% meta$ID[which(meta$type=="M")])], 1, mean, na.rm=T)
-# Computing the average depth at loci with a heterozygous call on the X chromosome of asexually-produced offspring
-locus_avg_rel_dp_het_asex_X <- apply(rel_dp_X[which(X_het_prop_in_asex == 1), which(dimnames(gt)[[2]] %in% meta$ID[which(meta$produced_by=="asex")])], 1, mean, na.rm=T)
-# Computing the average depth at loci with a homozygous call on the X chromosome of asexually-produced offspring
-locus_avg_rel_dp_homo_asex_X <- apply(rel_dp_X[which(X_het_prop_in_asex == 0), which(dimnames(gt)[[2]] %in% meta$ID[which(meta$produced_by=="asex")])], 1, mean, na.rm=T)
-
-
-par(mfrow=c(2,1), mai=c(1, 1, 0.1, 0.1))
-hist(locus_avg_rel_dp_homo_male_X, breaks=10, xlim=c(0,11), ylim=c(0,82), las=1, main="", border=NA, xlab="Male X", col="#0079B280")
-par(new=T)
-hist(locus_avg_rel_dp_het_male_X, breaks=50, xlim=c(0,11), ylim=c(0,82), las=1, main="", border=NA, ann=F, col="#B1299080")
-legend("topright", pch=15, col=c("#0079B280", "#B1299080"), legend=c("Homozygous", "Heterozygous"), bty="n")
-
-hist(locus_avg_rel_dp_homo_asex_X, breaks=30, xlim=c(0,11), ylim=c(0,66), las=1, main="", border=NA, xlab="X of asexually-produced hatchlings", col="#0079B280")
-par(new=T)
-hist(locus_avg_rel_dp_het_asex_X, breaks=50, xlim=c(0,11), ylim=c(0,66), las=1, main="", border=NA, ann=F, col="#B1299080")
-legend("topright", pch=15, col=c("#0079B280", "#B1299080"), legend=c("Homozygous", "Heterozygous"), bty="n")
+mean(avg_rel_dp_het_male_X) / mean(avg_rel_dp_homo_male_X)
