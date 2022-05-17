@@ -4,7 +4,7 @@ This is the repository for the scripts used in this study:
 >Larose* C., Lavanchy* G., Freitas S., Parker D.J., Schwander T. **Facultative parthenogenesis in an asexual stick insect: re-evolution of sex or vestigial sexual capacity?**. BioRxiv. https://www.biorxiv.org/content/10.1101/2022.03.25.485836
 
 ## Demultiplexed read acquisition
-The SRA accession numbers for the demultiplexed reads used in this study will be available in Table S1 in the supplementary materials of the article.
+The SRA accession numbers for the demultiplexed reads used in this study have been deposited in NCBI’s sequence read archive under BioProject ID **PRJNA804475**.
 They were demultiplexed using the `process_radtags` command of [stacks](https://catchenlab.life.illinois.edu/stacks/) v2.3e with the `-c -q -r -t 92 --filter_illumina`. options.
 
 ## Mapping to the reference genome of *Timema douglasi*.
