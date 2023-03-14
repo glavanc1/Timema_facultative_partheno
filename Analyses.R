@@ -8,6 +8,7 @@ library(adegenet)
 library(car)
 library(multcomp)
 library(phytools)
+library(ridgeline)
 
 
 ########################
@@ -98,6 +99,11 @@ row.names(MO6) <- adults
 
 # Loading the sex ratio results
 sexratio <- read.table("sex_ratios.txt", h=T)
+
+# Loading the hatching success data for other species
+allsp.raw <- read.table("allspp_hatching_unfert.csv", sep=",", h=T)
+# Keeping only clutches with at least five eggs
+allsp <- allsp.raw[which(allsp.raw$N_eggs >= 5),]
 
 # Loading the metadata for the reference T. douglasi and T. poppensis individuals
 treemeta <- read.table("metadata_additional_Tps_Tdi_refs.txt", h=T)
@@ -245,7 +251,7 @@ meta$total_eggs <- meta$N_unfertilized_eggs + meta$N_eggs_aftermating
 moms <- meta$ID[which(meta$type=="F")]
 moms <- moms[-which(moms %in% c("17-2161", "17-2204", "17-2009"))]
 
-### Figure 2
+### Figure 2A
 meta$order <- NA
 meta$order[which(meta$subpop == "MANCH_1")] <- 1
 meta$order[which(meta$subpop == "MANCH_2")] <- 2
@@ -273,6 +279,42 @@ ordered_pops <- c("MANCH_1", "MANCH_2", "MANCH_3", "MANCH_4", "MANCH_5", "MANCH_
 boxplot(meta$hatch_ratio_unf ~ meta$order, col=NA, las=2, outline=F, xlab="Population", ylab="Proportion of unfertilized eggs hatching", names=ordered_pops, ylim=c(0,1))
 points(meta$hatch_ratio_unf ~ jitter(eggs$order), col=eggs$col, pch=19, cex=sqrt(log(eggs$N_unf2/3)))
 legend("topleft", legend=c("5", "15", "60"), pch=19, cex=sqrt(log(c(5,15,60)/3)), bty="n")
+
+
+# Figure 2B
+ourdata <- data.frame(ID = eggs$ID, sp = eggs$lineage, year = "2017", location=eggs$subpop, N_eggs=eggs$N_unf, N_hatched=eggs$N_hatch_unf, hatch_ratio=eggs$hatch_ratio_unf)
+ourdata$sp[which(ourdata$sp == 1)] <- "Western Manchester"
+ourdata$sp[which(ourdata$sp == 2)] <- "Eastern Manchester"
+ourdata$sp[which(ourdata$sp == 3)] <- "Orr"
+
+allsp$hatch_ratio <- allsp$N_hatched / allsp$N_eggs
+ridgeline(allsp$hatch_ratio, allsp$sp, bw=0.01, border =  NA)
+
+all_unf.raw <- rbind(allsp, ourdata)
+all_unf <- all_unf.raw[which(all_unf.raw$N_eggs >= 5),]
+
+all_unf$sp[which(all_unf$sp == "petita")] <- "01_T. petita"
+all_unf$sp[which(all_unf$sp == "podura")] <- "02_T. podura"
+all_unf$sp[which(all_unf$sp == "cristinae")] <- "03_T. cristinae"
+all_unf$sp[which(all_unf$sp == "chumash")] <- "04_T. chumash"
+all_unf$sp[which(all_unf$sp == "knulli")] <- "05_T. knulli"
+all_unf$sp[which(all_unf$sp == "californicum")] <- "06_T. californicum"
+all_unf$sp[which(all_unf$sp == "poppensis")] <- "07_T. poppensis"
+all_unf$sp[which(all_unf$sp == "Western Manchester")] <- "08_Western_Manchester"
+all_unf$sp[which(all_unf$sp == "Eastern Manchester")] <- "09_Eastern_Manchester"
+all_unf$sp[which(all_unf$sp == "Orr")] <- "10_Orr"
+all_unf$sp[which(all_unf$sp == "douglasi")] <- "11_douglasi"
+all_unf$sp[which(all_unf$sp == "shepardi")] <- "12_shepardi"
+all_unf$sp[which(all_unf$sp == "monikensis")] <- "13_monikensis"
+all_unf$sp[which(all_unf$sp == "genevievae")] <- "14_genevievae"
+all_unf$sp[which(all_unf$sp == "tahoe")] <- "15_tahoe"
+
+hist(all_unf$hatch_ratio[which(all_unf$sp %!in% c("08_Western_Manchester", "09_Eastern_Manchester", "10_Orr"))], breaks=100, main="", las=1)
+hist(all_unf$hatch_ratio, breaks=100, main="", las=1)
+
+
+par(mai=c(0.5, 1.8, 0.1, 0.1))
+ridgeline(all_unf$hatch_ratio, all_unf$sp, bw=0.03, palette = c(hcl.colors(7, palette = "viridis", alpha = 1), "#841433", "#FEDA00", "#98D9EB"))
 
 
 ### Figure 3
@@ -338,7 +380,7 @@ meta$N_genotyped_after <- 0
 meta$N_genotyped_after[match(names(table(meta$family[which(meta$type=="A")])), meta$ID)] <- as.numeric(table(meta$family[which(meta$type=="A")]))
 
 # Difference in hatching success of unfertilized eggs between lineages
-# (Results presented in Figure 2A)
+# (Results presented in Figure 5A)
 glm1 <- glm(cbind(meta$N_hatching_unf, (meta$N_unfertilized_eggs - meta$N_hatching_unf)) ~ as.factor(meta$lineage), family=quasibinomial)
 summary(glm1)
 anova(glm1)
@@ -348,8 +390,8 @@ predicted.glm1 <- predict.glm(glm1, se.fit = T, type="response")
 
 
 # Difference in hatching success of eggs laid after mating between lineages
-# (Results presented in Figure 2B)
-glm2 <- glm(cbind(meta$N_hatch_after, (meta$N_after-meta$N_hatch_after)) ~ as.factor(meta$lineage), family=quasibinomial)
+# (Results presented in Figure 5B)
+glm2 <- glm(cbind(meta$N_hatching_aftermating, (meta$N_eggs_aftermating-meta$N_hatching_aftermating)) ~ as.factor(meta$lineage), family=quasibinomial)
 summary(glm2)
 anova(glm2)
 plot(glm2)
@@ -359,7 +401,7 @@ summary(glht(glm2, mcp("as.factor(meta$lineage)"="Tukey")))
 
 
 # Difference in proportion of eggs laid after mating that are fertilized between lineages
-# (Results presented in Figure 2C)
+# (Results presented in Figure 5C)
 glm3 <- glm(cbind(meta$N_after_fert, meta$N_after_unfert) ~ as.factor(meta$lineage), family=quasibinomial)
 summary(glm3)
 anova(glm3)
@@ -378,21 +420,21 @@ meta$lineageN[which(meta$lineage=="blue")] <- 3
 par(mfrow=c(1,3))
 
 # Values below were copied by hand because I'm lazy but were taken
-#Figure 2A
+#Figure 5A
 plot(meta$hatch_ratio_unf ~ jitter(meta$lineageN, amount = 0.1), cex=sqrt(meta$N_unfertilized_eggs+1)/4,  pch=19, col=meta$colK3, las=1, ylab="Hatching success of virgin eggs", xlab="Genetic lineage")
 points(x=c(1, 2, 3), y=c(0.4213483, 0.3287037, 0.6682692), pch=15, cex=1.5)
 segments(x0=1, x1=1, y0=0.4213483 - 0.07185943, y1=0.4213483 + 0.07185943, lwd=2)
 segments(x0=2, x1=2, y0=0.3287037 - 0.06205789, y1=0.3287037 + 0.06205789, lwd=2)
 segments(x0=3, x1=3, y0=0.6682692 - 0.06338718, y1=0.6682692 + 0.06338718, lwd=2)
 
-# Figure 2B
+# Figure 5B
 plot(meta$hatch_ratio_after ~ jitter(meta$lineageN, amount = 0.2), col=meta$colK3, cex=sqrt(meta$N_eggs_aftermating)/4, pch=19, las=1, ylab="Hatching success of eggs laid after mating", xlab="Genetic lineage")
 points(x=c(1, 2, 3), y=c(0.5526316, 0.5495495 , 0.5580524), pch=15, cex=1.5)
 segments(x0=1, x1=1, y0=0.5526316 - 0.08809832, y1=0.5526316 + 0.08809832, lwd=2)
 segments(x0=2, x1=2, y0=0.5495495 - 0.06317133, y1=0.5495495 + 0.06317133, lwd=2)
 segments(x0=3, x1=3, y0=0.5580524 - 0.08131147, y1=0.5580524 + 0.08131147, lwd=2)
 
-# Figure 3C
+# Figure 5C
 plot(meta$prop_after_fert ~ jitter(meta$lineageN, amount = 0.2), col=meta$colK3, cex=sqrt(meta$N_unfertilized_eggs)/4, pch=19, las=1, ylab="Proportion of fertilized eggs after mating", xlab="Genetic lineage")
 points(x=c(1, 2, 3), y=c(0.9466667, 0.7898089 , 0.1034483), pch=15, cex=1.5)
 segments(x0=1, x1=1, y0=0.9466667 - 0.06252173, y1=0.9466667 + 0.06252173, lwd=2)
