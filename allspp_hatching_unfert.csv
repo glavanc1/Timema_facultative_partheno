@@ -1,0 +1,451 @@
+ID,sp,year,location,N_eggs,N_hatched
+08-391,cristinae,2008,matrix,44,0
+08-392,cristinae,2008,matrix,15,0
+08-393,cristinae,2008,matrix,20,0
+08-394,cristinae,2008,matrix,32,0
+08-395,cristinae,2008,matrix,57,1
+08-396,cristinae,2008,matrix,41,2
+08-439,cristinae,2008,matrix,28,0
+08-440,cristinae,2008,matrix,45,0
+08-441,cristinae,2008,matrix,46,2
+08-442,cristinae,2008,matrix,40,1
+08-443,cristinae,2008,outlook,46,0
+08-130,cristinae,2008,PRC,15,0
+08-385,cristinae,2008,PRC,46,3
+08-386,cristinae,2008,PRC,31,0
+08-387,cristinae,2008,PRC,35,0
+08-388,cristinae,2008,PRC,17,0
+08-389,cristinae,2008,PRC,21,0
+08-390,cristinae,2008,PRC,21,0
+08-178,cristinae,2008,WTA,32,0
+08-179,cristinae,2008,WTA,33,0
+08-195,cristinae,2008,WTA,18,0
+08-196,cristinae,2008,WTA,67,0
+08-197,cristinae,2008,WTA,57,0
+08-228,cristinae,2008,WTA,27,0
+08-229,cristinae,2008,WTA,14,0
+08-230,cristinae,2008,WTA,37,0
+08-231,cristinae,2008,WTA,21,1
+08-232,cristinae,2008,WTA,6,0
+08-233,cristinae,2008,WTA,18,0
+08-234,cristinae,2008,WTA,31,0
+08-235,cristinae,2008,WTA,64,0
+08-236,cristinae,2008,WTA,77,0
+08-237,cristinae,2008,WTA,81,0
+08-238,cristinae,2008,WTA,50,0
+08-355,cristinae,2008,WTA + outl(?),13,0
+08-356,cristinae,2008,WTA + outl(?),14,0
+08-360,cristinae,2008,WTA + outl(?),42,0
+08-361,cristinae,2008,WTA + outl(?),29,3
+08-362,cristinae,2008,WTA + outl(?),45,2
+08-363,cristinae,2008,WTA + outl(?),9,0
+08-364,cristinae,2008,WTA + outl(?),4,0
+08-365,cristinae,2008,WTA + outl(?),32,0
+08-366,cristinae,2008,WTA + outl(?),3,0
+08-368,cristinae,2008,WTA + outl(?),6,0
+08-369,cristinae,2008,WTA + outl(?),6,0
+08-370,cristinae,2008,WTA + outl(?),2,0
+08-371,cristinae,2008,WTA + outl(?),9,0
+08-374,cristinae,2008,WTA + outl(?),14,1
+08-375,cristinae,2008,WTA + outl(?),11,0
+08-376,cristinae,2008,WTA + outl(?),21,0
+08-377,cristinae,2008,WTA + outl(?),17,0
+08-378,cristinae,2008,WTA + outl(?),18,0
+08-379,cristinae,2008,WTA + outl(?),10,0
+08-380,cristinae,2008,WTA + outl(?),6,0
+08-381,cristinae,2008,WTA + outl(?),15,0
+08-384,cristinae,2008,WTA + outl(?),9,0
+08-397,cristinae,2008,WTA + outl(?),1,0
+08-398,cristinae,2008,WTA + outl(?),31,0
+08-399,cristinae,2008,WTA + outl(?),28,0
+08-400,cristinae,2008,WTA + outl(?),6,0
+08-401,cristinae,2008,WTA + outl(?),32,0
+08-403,cristinae,2008,WTA + outl(?),49,0
+08-404,cristinae,2008,WTA + outl(?),17,0
+08-405,cristinae,2008,WTA + outl(?),33,0
+08-406,cristinae,2008,WTA + outl(?),6,0
+08-407,cristinae,2008,WTA + outl(?),36,0
+08-408,cristinae,2008,WTA + outl(?),26,0
+08-409,cristinae,2008,WTA + outl(?),59,1
+08-410,cristinae,2008,WTA + outl(?),34,0
+08-411,cristinae,2008,WTA + outl(?),50,0
+08-412,cristinae,2008,WTA + outl(?),19,0
+08-413,cristinae,2008,WTA + outl(?),31,0
+08-414,cristinae,2008,WTA + outl(?),16,0
+08-415,cristinae,2008,WTA + outl(?),42,0
+08-416,cristinae,2008,WTA + outl(?),13,0
+08-417,cristinae,2008,WTA + outl(?),10,0
+08-418,cristinae,2008,WTA + outl(?),46,0
+08-419,cristinae,2008,WTA + outl(?),23,0
+08-420,cristinae,2008,WTA + outl(?),21,0
+08-421,cristinae,2008,WTA + outl(?),23,0
+08-422,cristinae,2008,WTA + outl(?),33,0
+08-423,cristinae,2008,WTA + outl(?),0,0
+08-424,cristinae,2008,WTA + outl(?),26,0
+08-425,cristinae,2008,WTA + outl(?),5,0
+08-426,cristinae,2008,WTA + outl(?),41,0
+08-427,cristinae,2008,WTA + outl(?),53,0
+08-428,cristinae,2008,WTA + outl(?),10,0
+08-429,cristinae,2008,WTA + outl(?),25,0
+08-430,cristinae,2008,WTA + outl(?),26,0
+08-431,cristinae,2008,WTA + outl(?),28,0
+08-432,cristinae,2008,WTA + outl(?),34,0
+08-433,cristinae,2008,WTA + outl(?),26,0
+08-434,cristinae,2008,WTA + outl(?),58,0
+08-435,cristinae,2008,WTA + outl(?),27,1
+08-436,cristinae,2008,WTA + outl(?),21,3
+08-437,cristinae,2008,WTA + outl(?),7,0
+08-438,cristinae,2008,WTA + outl(?),37,0
+08-492,cristinae,2008,WTA + outl(?),48,1
+08-408,cristinae,2008,WTA + outl(?),27,0
+08-026,podura,2008,47,20,1
+08-027,podura,2008,46,19,1
+08-450,podura,2008,Edna A,35,0
+08-451,podura,2008,Edna A,20,0
+08-452,podura,2008,Edna A,1,0
+08-453,podura,2008,Edna A,29,0
+08-454,podura,2008,Edna A,48,0
+08-276,podura,2008,Edna A,44,0
+08-277,podura,2008,Edna A,30,0
+08-278,podura,2008,Edna A,59,0
+08-279,podura,2008,Edna A,37,0
+08-280,podura,2008,Edna A,10,0
+08-281,podura,2008,Edna A,10,0
+08-282,podura,2008,Edna A,46,0
+08-309,podura,2008,Edna A,2,0
+08-310,podura,2008,Edna A,11,1
+08-699,podura,2008,Edna C,10,1
+08-750,chumash,2008,Hw 2 pop 44,3,0
+08-739,chumash,2008,HW2 pop30,5,0
+08-570,chumash,2008,HW2 pop45,13,4
+08-571,chumash,2008,HW2 pop45,5,0
+08-713,chumash,2008,HW2 pop45,15,3
+08-586,chumash,2008,NA,7,0
+08-300,chumash,2008,49b,11,3
+08-463,chumash,2008,49b,16,0
+08-464,chumash,2008,49b,10,0
+08-287,chumash,2008,Edna C,38,0
+08-290,chumash,2008,Edna C,1,0
+08-288,chumash,2008,Edna C,31,0
+08-289,chumash,2008,Edna C,22,0
+08-291,chumash,2008,Edna C,23,0
+08-568,chumash,2008,Edna C,45,1
+08-569,chumash,2008,Edna C,12,0
+08-335,chumash,2008,HW2 pop 43 (adenost),21,0
+08-336,chumash,2008,HW2 pop 43 (adenost),15,0
+08-337,chumash,2008,HW2 pop 43 (adenost),16,0
+08-712,chumash,2008,HW2 pop 43 (oak),24,2
+08-444,petita,2008,50,12,0
+08-445,petita,2008,50,26,0
+08-446,petita,2008,50,20,0
+08-447,petita,2008,50,16,0
+08-448,petita,2008,50,16,0
+08-449,petita,2008,54,20,0
+08-456,knulli,2008,52,23,3
+08-457,knulli,2008,52,19,2
+08-458,knulli,2008,52,22,3
+08-459,knulli,2008,52,14,2
+08-479,knulli,2008,52,25,0
+08-748,knulli,2008,52,19,0
+08-460,knulli,2008,53,42,0
+08-461,knulli,2008,53,42,4
+08-478,knulli,2008,53,24,0
+NA,knulli,2008,53,12,3
+08-462,knulli,2008,big sur,25,2
+08-644,poppensis,2008,Fish Rock Rd II,38,0
+08-645,poppensis,2008,Fish Rock Rd II,36,0
+08-646,poppensis,2008,Fish Rock Rd II,23,0
+08-647,poppensis,2008,Fish Rock Rd II,13,0
+08-648,poppensis,2008,Fish Rock Rd II,33,2
+08-649,poppensis,2008,Fish Rock Rd II,2,0
+08-650,poppensis,2008,Fish Rock Rd II,0,0
+08-651,poppensis,2008,Fish Rock Rd II,0,0
+08-652,poppensis,2008,Fish Rock Rd II,1,0
+08-653,poppensis,2008,Fish Rock Rd II,1,0
+08-654,poppensis,2008,Fish Rock Rd II,0,0
+08-655,poppensis,2008,Fish Rock Rd II,0,0
+08-656,poppensis,2008,Fish Rock Rd II,0,0
+08-657,poppensis,2008,Fish Rock Rd II,5,0
+08-658,poppensis,2008,Fish Rock Rd II,6,0
+08-455,poppensis,2008,FishRockI DougFir,16,0
+08-592,poppensis,2008,FishRockI DougFir,1,0
+08-593,poppensis,2008,FishRockI DougFir,9,0
+08-595,poppensis,2008,FishRockI DougFir,12,0
+08-596,poppensis,2008,FishRockI DougFir,13,1
+08-597,poppensis,2008,FishRockI DougFir,12,0
+08-604,poppensis,2008,FishRockI DougFir,11,0
+08-605,poppensis,2008,FishRockI DougFir,7,0
+08-671,poppensis,2008,FishRockI DougFir,18,0
+08-672,poppensis,2008,FishRockI DougFir,8,0
+08-673,poppensis,2008,FishRockI DougFir,11,2
+D261,poppensis,2008,FishRockI DougFir,27,0
+D262,poppensis,2008,FishRockI DougFir,26,1
+D643,poppensis,2008,FishRockI DougFir,38,0
+D644,poppensis,2008,FishRockI DougFir,21,5
+D646,poppensis,2008,FishRockI DougFir,19,1
+D647,poppensis,2008,FishRockI DougFir,9,0
+08-619,poppensis,2008,FishRockI Redw,15,1
+08-620,poppensis,2008,FishRockI Redw,8,0
+08-624,poppensis,2008,FishRockI Redw,22,0
+08-629,poppensis,2008,FishRockI Redw,5,0
+D288,poppensis,2008,FishRockI Redw,10,0
+D642,poppensis,2008,FishRockI Redw,37,1
+D645,poppensis,2008,FishRockI Redw,22,0
+08-572,poppensis,2008,Fort Ross,10,1
+08-573,poppensis,2008,Fort Ross,11,2
+08-574,poppensis,2008,Fort Ross,23,1
+08-575,poppensis,2008,Fort Ross,17,1
+08-576,poppensis,2008,Fort Ross,7,0
+08-758,poppensis,2008,Fort Ross,19,1
+08-563,poppensis,2008,King Ridge 2,6,0
+08-564,poppensis,2008,King Ridge 2,16,0
+08-565,poppensis,2008,King Ridge 2,46,0
+08-494,poppensis,2008,King Ridge I,17,0
+08-496,poppensis,2008,King Ridge I,20,0
+08-553,poppensis,2008,King Ridge I,13,0
+08-607,poppensis,2008,King Ridge I,16,0
+08-608,poppensis,2008,King Ridge I,10,1
+08-609,poppensis,2008,King Ridge I,36,2
+08-610,poppensis,2008,King Ridge I,4,0
+08-668,poppensis,2008,King Ridge I,17,0
+08-669,poppensis,2008,King Ridge I,20,2
+08-737,poppensis,2008,King Ridge I,13,1
+08-738,poppensis,2008,King Ridge I,20,0
+08-740,poppensis,2008,King Ridge I,10,4
+08-052,poppensis,2008,madonna,23,0
+08-581,poppensis,2008,madonna,18,0
+08-581,poppensis,2008,madonna,0,0
+08-304,californicum,2008,Lick,21,0
+08-321,californicum,2008,Lick,39,0
+08-322,californicum,2008,Lick,3,0
+08-323,californicum,2008,Lick,4,0
+08-344,californicum,2008,Lick,5,0
+08-345,californicum,2008,Lick,23,2
+08-341,californicum,2008,HW1 Pop52,7,0
+09-121,cristinae,2009,Stagecoach,47,0
+09-122,cristinae,2009,Stagecoach,55,0
+09-123,cristinae,2009,Stagecoach,59,2
+09-124,cristinae,2009,Stagecoach,50,0
+09-125,cristinae,2009,Stagecoach,60,0
+09-126,cristinae,2009,Stagecoach,59,1
+09-127,cristinae,2009,Stagecoach,46,0
+09-128,cristinae,2009,Stagecoach,57,1
+09-129,cristinae,2009,Stagecoach,55,1
+09-130,cristinae,2009,Stagecoach,51,1
+09-131,cristinae,2009,Stagecoach,49,1
+09-132,cristinae,2009,Stagecoach,60,2
+09-133,cristinae,2009,Stagecoach,48,0
+09-205,cristinae,2009,Stagecoach,51,2
+09-206,cristinae,2009,Stagecoach,49,0
+09-207,cristinae,2009,Stagecoach,40,2
+09-208,cristinae,2009,Stagecoach,56,2
+09-209,cristinae,2009,Stagecoach,40,0
+09-210,cristinae,2009,Stagecoach,45,0
+09-211,cristinae,2009,Stagecoach,46,2
+09-212,cristinae,2009,Stagecoach,52,1
+09-213,cristinae,2009,Stagecoach,48,0
+09-214,cristinae,2009,Stagecoach,51,2
+09-215,cristinae,2009,Stagecoach,40,0
+09-216,cristinae,2009,Stagecoach,47,0
+09-217,cristinae,2009,Stagecoach,51,2
+09-218,cristinae,2009,Stagecoach,50,2
+09-219,cristinae,2009,Stagecoach,40,1
+09-220,cristinae,2009,Stagecoach,52,0
+09-221,cristinae,2009,Stagecoach,44,0
+09-222,cristinae,2009,Stagecoach,54,0
+09-223,cristinae,2009,Stagecoach,58,1
+09-224,cristinae,2009,Stagecoach,56,1
+09-225,cristinae,2009,Stagecoach,44,1
+09-226,cristinae,2009,Stagecoach,57,0
+09-227,cristinae,2009,Stagecoach,41,2
+09-228,cristinae,2009,Stagecoach,54,0
+09-229,cristinae,2009,Stagecoach,58,2
+09-230,cristinae,2009,Stagecoach,51,0
+09-231,cristinae,2009,Stagecoach,47,0
+CRI-MA-VF-1,cristinae,2007,Matrix MA,8,0
+CRI-MA-VF-9,cristinae,2007,Matrix MA,58,0
+CRI-MA-VF-10,cristinae,2007,Matrix MA,84,2
+CRI-MA-VF-11,cristinae,2007,Matrix MA,51,2
+CRI-SC-VF-7,cristinae,2007,Stagecoach Rd. SC,41,1
+CRI-WTA-VF-4,cristinae,2007,Watertower WTA,50,0
+CRI-WTA-VF-12,cristinae,2007,Watertower WTA,44,0
+CRI-WTA-VF-21,cristinae,2007,Watertower WTA,57,1
+CRI-WTA-VF-22,cristinae,2007,Watertower WTA,65,1
+CRI-WTA-VF-23,cristinae,2007,Watertower WTA,47,1
+CRI-WTA-VF-24,cristinae,2007,Watertower WTA,38,0
+CRI-WTA-VF-25,cristinae,2007,Watertower WTA,52,1
+CRI-AA-VF-5,cristinae,2007,West Camino Cielo AA,52,0
+CRI-AA-VF-6,cristinae,2007,West Camino Cielo AA,28,0
+CRI-AA-VF-13,cristinae,2007,West Camino Cielo AA,68,9
+CRI-AA-VF-14,cristinae,2007,West Camino Cielo AA,48,0
+CRI-AA-VF-19,cristinae,2007,West Camino Cielo AA,55,1
+CRI-AA-VF-20,cristinae,2007,West Camino Cielo AA,34,6
+CRI-AA-VF-26,cristinae,2007,West Camino Cielo AA,56,0
+CRI-CA-VF-8,cristinae,2007,West Camino Cielo CA,59,1
+CRI-CA-VF-15,cristinae,2007,West Camino Cielo CA,32,0
+CRI-CA-VF-16,cristinae,2007,West Camino Cielo CA,22,0
+CRI-CA-VF-17,cristinae,2007,West Camino Cielo CA,27,0
+CRI-CA-VF-18,cristinae,2007,West Camino Cielo CA,40,0
+CALI-LICK-VF1,californicum,2007,Lick Observatorium LICK,29,0
+CALI-LICK-VF2,californicum,2007,Lick Observatorium LICK,37,0
+CALI-LICK-VF3,californicum,2007,Lick Observatorium LICK,34,0
+CALI-LICK-VF4,californicum,2007,Lick Observatorium LICK,26,0
+CALI-LICK-VF5,californicum,2007,Lick Observatorium LICK,10,1
+CALI-LICK-VF6,californicum,2007,Lick Observatorium LICK,20,0
+CALI-LICK-VF7,californicum,2007,Lick Observatorium LICK,31,0
+CALI-LICK-VF8,californicum,2007,Lick Observatorium LICK,28,0
+CALI-LICK-VF9,californicum,2007,Lick Observatorium LICK,25,0
+CALI-LICK-VF20,californicum,2007,Lick Observatorium LICK,31,15
+PE-MO-F-10,petita,2007,MONTEREY,26,0
+KNULLI-RED-road-1F,knulli,2007,BIG CREEK RD,34,7
+KNULLI-RED-road-2F,knulli,2007,BIG CREEK RD,10,0
+KNULLI-RED-road-3F,knulli,2007,BIG CREEK RD,36,0
+KNULLI-RED-road-11F,knulli,2007,BIG CREEK RD,43,0
+KNULLI-RED-road-11F,knulli,2007,BIG CREEK RD,56,0
+KNULLI-CEAN-VF19,knulli,2007,BIG CREEK pop32,47,0
+KNULLI-CEAN-VF21,knulli,2007,BIG CREEK pop32,31,5
+KNULLI-CEAN-VF50,knulli,2007,BIG CREEK pop aud31,54,5
+KNULLI-CEAN-VF22,knulli,2007,BIG CREEK pop32,26,0
+KNULLI-CEAN-VF20,knulli,2007,BIG CREEK pop32,39,0
+POP-SUM-F39,poppensis,2007,Summit Rd SUM,30,3
+POP-SUM-F51,poppensis,2007,Summit Rd SUM,25,0
+POP-SUM-F52,poppensis,2007,Summit Rd SUM,25,0
+POP-SUM-F53,poppensis,2007,Summit Rd SUM,33,0
+POP-KING-F1,poppensis,2007,King Road,34,13
+POP-KING-F50,poppensis,2007,King Road,21,0
+POP-KING-F53,poppensis,2007,King Road,33,0
+POP-KING-F40,poppensis,2007,King Road,40,0
+POP-KING-VF10,poppensis,2007,King Road,11,4
+POP-KING-F-A1,poppensis,2007,King Road,23,0
+POP-KING-F-A2,poppensis,2007,King Road,31,23
+POP-KING-F-B1,poppensis,2007,King Road,14,4
+POP-KING-F-B2,poppensis,2007,King Road,21,6
+CHUM-PF-100F,chumash,2007,Poppet Flat Rd PF,37,2
+Chum-PF-,chumash,2007,Poppet Flat Rd PF,32,0
+Chum-PF-VFA,chumash,2007,Poppet Flat Rd PF,32,3
+Chum-PF-VFB,chumash,2007,Poppet Flat Rd PF,41,4
+Chum-HW2-p29F10,chumash,2007,HW 2 Pop 29,24,1
+Chum-HW2-F10,chumash,2007,HW 2 Pop 26,121,2
+Chum-HW2-F40,chumash,2007,HW 2 J-L,26,1
+MO-DE-1F,monikensis,2007,Decker Road DE,59,34
+MO-CC-3F,monikensis,2007,Decker Road DE,39,23
+MO-DE-4F,monikensis,2007,Decker Road DE,43,43
+MO-DE-6F,monikensis,2007,Decker Road DE,68,44
+MO-CC-7F,monikensis,2007,Decker Road DE,31,19
+MO-DE-9F,monikensis,2007,Decker Road DE,55,39
+MO-DE-10F,monikensis,2007,Decker Road DE,32,25
+MO-DE-11F,monikensis,2007,Decker Road DE,54,46
+MO-CC-13F,monikensis,2007,Decker Road DE,29,24
+MO-DE-13F,monikensis,2007,Decker Road DE,45,32
+MO-CC-15F,monikensis,2007,Decker Road DE,45,39
+MO-CC-16F,monikensis,2007,Decker Road DE,32,16
+MO-DE-16F,monikensis,2007,Decker Road DE,23,10
+MO-CC-17F,monikensis,2007,Decker Road DE,49,26
+MO-CC-18F,monikensis,2007,Decker Road DE,24,16
+MO-DE-14BF,monikensis,2007,Decker Road DE,56,40
+MO-FE-4F,monikensis,2007,Fence FE,42,36
+MO-FE-6F,monikensis,2007,Fence FE,26,14
+MO-FE-7F,monikensis,2007,Fence FE,38,12
+MO-FE-8F,monikensis,2007,Fence FE,24,23
+MO-FE-13F,monikensis,2007,Fence FE,37,21
+MO-FE-14F,monikensis,2007,Fence FE,58,48
+MO-OAK-1F,monikensis,2007,Thousand Oaks OAK,32,14
+MO-OAK-3F,monikensis,2007,Thousand Oaks OAK,44,17
+MO-OAK-10F,monikensis,2007,Thousand Oaks OAK,46,46
+DOUG-X-1F,shepardi,2007,Orr Rd ORR,38,33
+SHEP-KING-3F,shepardi,2007,King Road,68,60
+SHEP-KING-5F,shepardi,2007,King Road,51,42
+GEN-HWY20-10F,genevievae,2007,HWY20,91,52
+GEN-HWY20-11F,genevievae,2007,HWY20,79,67
+GEN-PUE-F60,genevievae,2007,Del Puerto Road,47,7
+GEN-PUE-F50,genevievae,2007,Del Puerto Road,45,38
+DOUG-ORR-1F,douglasi,2007,Orr Rd ORR,20,8
+DOUG-ORR-F40,douglasi,2007,Orr Rd ORR,45,20
+DOUG-ORR-F40b,douglasi,2007,Orr Rd ORR,44,35
+DOUG-ORR-F41,douglasi,2007,Orr Rd ORR,24,19
+DOUG-ORR-F46,douglasi,2007,Orr Rd ORR,55,43
+DOUG-ORR-F47,douglasi,2007,Orr Rd ORR,51,25
+DOUG-ORR-F49,douglasi,2007,Orr Rd ORR,50,46
+DOUG-ORR-F50,douglasi,2007,Orr Rd ORR,38,28
+DOUG-ORR-F51,douglasi,2007,Orr Rd ORR,30,27
+NA,douglasi,2007,Orr Rd ORR,76,69
+TA-SN-3,tahoe,2007,SN,24,17
+TA-SN-4,tahoe,2007,SN,41,30
+TA-SN-2,tahoe,2007,SN,16,13
+08-038,monikensis,2008,NA,79,48
+08-050,monikensis,2008,NA,56,43
+08-051,monikensis,2008,NA,74,51
+08-056,monikensis,2008,NA,62,50
+08-057,monikensis,2008,NA,24,24
+08-058,monikensis,2008,NA,20,20
+08-059,monikensis,2008,NA,93,63
+08-060,monikensis,2008,NA,53,31
+08-061,monikensis,2008,NA,68,24
+08-062,monikensis,2008,NA,88,70
+08-063b,monikensis,2008,NA,72,41
+08-089,monikensis,2008,NA,67,43
+08-090,monikensis,2008,NA,86,46
+08-091,monikensis,2008,NA,63,44
+08-104,monikensis,2008,NA,45,9
+08-105,monikensis,2008,NA,67,30
+08-106,monikensis,2008,NA,83,26
+08-107,monikensis,2008,NA,52,41
+08-108,monikensis,2008,NA,29,18
+08-128,monikensis,2008,NA,21,14
+08-194,monikensis,2008,NA,18,10
+08-350,genevievae,2008,NA,11,9
+08-351,genevievae,2008,NA,32,30
+08-352,genevievae,2008,NA,38,31
+08-520,genevievae,2008,NA,31,26
+08-515,genevievae,2008,NA,4,2
+08-632,genevievae,2008,NA,35,22
+08-633,genevievae,2008,NA,29,25
+08-506,genevievae,2008,NA,21,14
+08-509,genevievae,2008,NA,45,26
+08-510,genevievae,2008,NA,30,10
+08-511,genevievae,2008,NA,27,18
+08-512,genevievae,2008,NA,38,37
+08-513,genevievae,2008,NA,25,21
+08-514,genevievae,2008,NA,22,18
+08-631,genevievae,2008,NA,20,8
+08-284,shepardi,2008,NA,34,20
+08-285,shepardi,2008,NA,41,35
+08-286,shepardi,2008,NA,26,17
+08-287,shepardi,2008,NA,45,31
+08-616,shepardi,2008,NA,15,11
+08-311,shepardi,2008,NA,9,2
+08-312,shepardi,2008,NA,13,2
+08-313,shepardi,2008,NA,2,1
+08-314,shepardi,2008,NA,41,32
+08-315,shepardi,2008,NA,36,26
+08-338,shepardi,2008,NA,17,14
+08-339,shepardi,2008,NA,22,14
+08-340,shepardi,2008,NA,41,30
+08-614,shepardi,2008,NA,39,30
+08-615,shepardi,2008,NA,50,40
+08-617,shepardi,2008,NA,55,28
+08-618,shepardi,2008,NA,39,38
+08-537,douglasi,2008,NA,5,2
+08-538,douglasi,2008,NA,27,18
+08-539,douglasi,2008,NA,33,20
+08-540,douglasi,2008,NA,23,15
+08-541,douglasi,2008,NA,28,23
+08-542,douglasi,2008,NA,11,11
+08-543,douglasi,2008,NA,7,3
+08-544,douglasi,2008,NA,4,3
+08-558,douglasi,2008,NA,27,22
+08-559,douglasi,2008,NA,20,14
+08-582,douglasi,2008,NA,38,29
+08-583,douglasi,2008,NA,68,51
+08-584,douglasi,2008,NA,21,16
+08-585,douglasi,2008,NA,35,22
+08-586,douglasi,2008,NA,15,13
+08-661,douglasi,2008,NA,10,8
+08-662,douglasi,2008,NA,48,30
+08-663,douglasi,2008,NA,30,21
+08-664,douglasi,2008,NA,18,9
+08-665,douglasi,2008,NA,2,2
+08-666,douglasi,2008,NA,19,12
+08-667,douglasi,2008,NA,24,22
+08-700,douglasi,2008,NA,7,4
+08-701,douglasi,2008,NA,46,39
