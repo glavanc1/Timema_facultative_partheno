@@ -1,7 +1,7 @@
 # Timema_facultative_partheno
 
 This is the repository for the scripts used in this study:
->Larose* C., Lavanchy* G., Freitas S., Parker D.J., Schwander T. **Facultative parthenogenesis in an asexual stick insect: re-evolution of sex or vestigial sexual capacity?**. BioRxiv. https://www.biorxiv.org/content/10.1101/2022.03.25.485836
+>Larose* C., Lavanchy* G., Freitas S., Parker D.J., Schwander T. **Facultative parthenogenesis: a transient state in transitions between sex and obligate asexuality in stick insects?**. BioRxiv. https://www.biorxiv.org/content/10.1101/2022.03.25.485836
 
 ## Demultiplexed read acquisition
 The SRA accession numbers for the demultiplexed reads used in this study have been deposited in NCBI’s sequence read archive under BioProject ID **PRJNA804475**.
